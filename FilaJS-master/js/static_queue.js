@@ -1,29 +1,29 @@
 class StaticQueue{
     constructor(){
-        this.data = [];
+        this.data = []; //inicializando array, sem definição de tamanho
     }
-    enqueue(element) {
-        this.data.push(element);
+    enqueue(element) { //adicionando elemento
+        this.data.push(element); //adiciona elemento no array
     }
-    dequeue(){
-        return this.data.shift();
+    dequeue(){ //remove elemento
+        return this.data.shift(); //retorna elemento excluído
     }
-    front() {
-        return this.data[0];
+    front() { //primeiro elemento da fila
+        return this.data[0]; //retorna primeiro elemento do array
     }
-    back(){
-        return this.data[this.data.length-1];
+    back(){ //último elemento da fila
+        return this.data[this.data.length-1];  //retorna oque estiver na ultima posição do array
     }
-    isEmpty() {
-        return (this.data.length===0);
+    isEmpty() { //verifica se a fila está vazia
+        return (this.data.length===0); //verifica e retorna se tamanho do array for igual a 0
     }
-    size() {
-        return this.data.length;
+    size() {    //tamanho da fila
+        return this.data.length;  //retorna o tamanho do array
     }
-    clear() {
-        this.data = [];
+    clear() {   //limpa fila
+        this.data = []; //limpa array
     }
-    print(separator=" - ") {
-        return this.data.join(separator);
+    print(separator=" - ") {    //mostra toda a fila com o separador
+        return this.data.join(separator);   //retorna o que tem no array com o separador
     }
 }
