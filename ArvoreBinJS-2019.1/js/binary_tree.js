@@ -11,7 +11,7 @@ class BinaryTree{
     insertNode(rootNode, value){
         if (rootNode==null) {
             return new Node(value);
-            // se rootNode igual a null retona
+            // se rootNode igual a null retorna
             // o valor para dentro raiz da arvore
         }
         if(value>rootNode.content){
@@ -135,7 +135,7 @@ class BinaryTree{
     min() {
         let node = this.root;
         //variavel local node recebe root
-        if (node == null) return null;//se node for igual a vazil retorna vazil
+        if (node == null) return null;//se node for igual a vazio retorna vazio
         //equnato o elemento do nó raiz da esquerda for diferente de null
         // node recebe o elemento da esquerda 
         //retorna o conteudo do nó
