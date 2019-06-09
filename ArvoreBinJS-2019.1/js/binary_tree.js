@@ -32,11 +32,16 @@ class BinaryTree{
     }
     searchNode(rootNode, value){
         if (rootNode == null) return false;
+        //Valor de rootNode igual a vazio retorna falso
         if (rootNode.content == value) return true;
+        //se o conteudo de rootNode tiver algum valor retorna verdadeiro
         if (value > rootNode.content)
             return this.searchNode(rootNode.right, value);
+            //se o valor for maio que o conteudo de rootNode
+            //retorna o valor da direita da arvore
         else
             return this.searchNode(rootNode.left, value);
+            //se for manor retorna o valor de esquerda da arvore
     }
 
 
