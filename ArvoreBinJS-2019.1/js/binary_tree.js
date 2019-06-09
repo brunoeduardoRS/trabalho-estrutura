@@ -51,9 +51,13 @@ class BinaryTree{
     }
     inOrder(rootNode, callback) {
         if (rootNode == null) return;
+        //rootNode igual a null returna nada
         this.inOrder(rootNode.left, callback);
+        //mostrar o lemento da raiz para a direita
         callback(rootNode.content);
+        //mostra o elemento do nó da raiz
         this.inOrder(rootNode.right, callback);
+        //mostra o elemento da esquerda
     }
 
     //executa a função callback para cada nó, em pré-ordem
@@ -133,7 +137,7 @@ class BinaryTree{
         if(node==null) 
             return 0;
         return 1 + this.sumNodes(node.left)+this.sumNodes(node.right);
-        //se node igual a null retorna 0
+        //se nó igual a null retorna 0
     }
 
     //exibe o menor valor da arvore
