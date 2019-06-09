@@ -11,13 +11,19 @@ class BinaryTree{
     insertNode(rootNode, value){
         if (rootNode==null) {
             return new Node(value);
+            // se rootNode igual a null retona
+            // o valor para dentro raiz da arvore
         }
         if(value>rootNode.content){
             rootNode.right = this.insertNode(rootNode.right, value);
+            //se o valor for maior que o conteudo do nó raiz 
+            //insere o valor no lado direito em relação a raiz
         }else{
             rootNode.left = this.insertNode(rootNode.left, value);
+            //caso menor o valor é inserido na esquerda em relação a raiz
         }
         return rootNode;
+        //rertona rootNode
     }
 
     //retorna true se o valor já existe na arvore
@@ -99,7 +105,7 @@ class BinaryTree{
 
     //exibe a altura da arvore
     heigth(){
-        return this.heigthNode(this.root);        
+        return this.heigthNode(this.root);
     }
     heigthNode(node){
         if(node==null)
@@ -111,6 +117,7 @@ class BinaryTree{
         }else{
             return 1 + rightHeigth;
         } 
+        //se node igual a null retorna -1 
     }
 
     // informa quantos nós existem na arvore
@@ -121,12 +128,17 @@ class BinaryTree{
         if(node==null) 
             return 0;
         return 1 + this.sumNodes(node.left)+this.sumNodes(node.right);
+        //se node igual a null retorna 0
     }
 
     //exibe o menor valor da arvore
     min() {
         let node = this.root;
-        if (node == null) return null;
+        //variavel local node recebe root
+        if (node == null) return null;//se node for igual a vazil retorna vazil
+        //equnato o elemento do nó raiz da esquerda for diferente de null
+        // node recebe o elemento da esquerda 
+        //retorna o conteudo do nó
         while (node.left != null)
             node = node.left;
         return node.content;
@@ -135,9 +147,13 @@ class BinaryTree{
     //exibe o maior valor da arvore
     max() {
         let node = this.root;
+        //variavel local node recebe root
         if (node == null) return null;
         while (node.right != null)
             node = node.right;
         return node.content;
+        //equnato o elemento do nó raiz da direita for diferente de null
+        // node recebe o elemento da direita
+        //retorna o conteudo do nó
     }
 }
