@@ -66,7 +66,7 @@ class BinaryTree{
     }
     preOrder(rootNode, callback) {
         if (rootNode == null) return;
-         //rootNode igual a null returna nada
+        //rootNode igual a null returna nada
         callback(rootNode.content);
         //mostra o elemento do nó da raiz
         this.preOrder(rootNode.left, callback);
@@ -81,9 +81,13 @@ class BinaryTree{
     }
     posOrder(rootNode, callback) {
         if (rootNode == null) return;
+        //rootNode igual a null returna nada
         this.posOrder(rootNode.left, callback);
+        //mostrar o lemento da raiz para a direita
         this.posOrder(rootNode.right, callback);
+        //mostra o elemento da esquerda
         callback(rootNode.content);
+        //mostra o elemento do nó da raiz
     }
     
     //remove um elemento existente na arvore o retorna
