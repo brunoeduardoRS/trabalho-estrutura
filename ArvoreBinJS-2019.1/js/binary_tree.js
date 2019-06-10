@@ -66,9 +66,13 @@ class BinaryTree{
     }
     preOrder(rootNode, callback) {
         if (rootNode == null) return;
+         //rootNode igual a null returna nada
         callback(rootNode.content);
+        //mostra o elemento do nó da raiz
         this.preOrder(rootNode.left, callback);
+        //mostrar o lemento da raiz para a direita
         this.preOrder(rootNode.right, callback);
+        //mostra o elemento da esquerda
     }
     
     //executa a função callback para cada nó, em pós-ordem
