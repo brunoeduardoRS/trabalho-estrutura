@@ -9,7 +9,7 @@ class BinaryTree{
         this.root = this.insertNode(this.root, element);
     }
     insertNode(rootNode, value){
-        if (rootNode==null) {
+        if (rootNode == null) {
             return new Node(value);
             // se rootNode igual a null retorna
             // o valor para dentro raiz da arvore
@@ -95,29 +95,41 @@ class BinaryTree{
         this.root = this.removeNode(this.root, value);
     }
     removeNode(rootNode, value){
-        if(rootNode==null) 
+        if(rootNode == null) 
             return null;
-        if(value==rootNode.content){
-            if(rootNode.left===null && rootNode.right===null){// é uma folha - Grau 0
+            //valor de rootNode igual a null retorna null
+        if(value == rootNode.content){
+            if(rootNode.left === null && rootNode.right === null){// é uma folha - Grau 0
                 rootNode = null;
+                //se rootNode.left igual a null e rootNode.right igual a null
+                //o nó raiz recebe nada
             } else if (rootNode.right == null) { // tem filho na esqueda - Grau 1
                 rootNode = rootNode.left;
+                //mais se o conteudo da direita do nó raiz for igual a null
+                //O nó raiz recebe nó raiz da esquerda
             } else if (rootNode.left == null) { // só tem filho na direita - Grau 1
                 rootNode = rootNode.right;
+                //mais se o conteudo da esquerda do nó raiz for igual a null
+                //O nó raiz recebe nó raiz da direita
             } else{ // tem filho nos dois lados - Grau 2
                 let i = rootNode.right;
-                while(i.left!=null){
+                while(i.left != null){
                     i = i.left;
+                    //enquanto o nó for diferente de null
+                    //i recebe rootNode da esquerda
                 }
                 i.left = rootNode.left;
                 rootNode = rootNode.right;
             }
         }else if(value>rootNode.content){
             rootNode.right = this.removeNode(rootNode.right, value);
+            //valor maior que rootNode.content remover o valor de right
         }else{
             rootNode.left = this.removeNode(rootNode.left, value);
+            //remove o valor de left
         }
         return rootNode;
+        //retorna rootNode
     }
 
     //exibe a altura da arvore
@@ -125,7 +137,7 @@ class BinaryTree{
         return this.heigthNode(this.root);
     }
     heigthNode(node){
-        if(node==null)
+        if(node == null)
             return -1;
         let leftHeigth = this.heigthNode(node.left),
             rightHeigth = this.heigthNode(node.right);
@@ -142,7 +154,7 @@ class BinaryTree{
         return this.sumNodes(this.root);
     }
     sumNodes(node){
-        if(node==null) 
+        if(node == null) 
             return 0;
         return 1 + this.sumNodes(node.left)+this.sumNodes(node.right);
         //se nó igual a null retorna 0
