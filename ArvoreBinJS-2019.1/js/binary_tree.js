@@ -116,10 +116,12 @@ class BinaryTree{
                 while(i.left != null){
                     i = i.left;
                     //enquanto o nó for diferente de null
-                    //i recebe rootNode da esquerda
+                    //i continua recebendo i.left
                 }
                 i.left = rootNode.left;
+                //i.left recebe rootNode.left
                 rootNode = rootNode.right;
+                //rootNode recebe rootNode.right
             }
         }else if(value>rootNode.content){
             rootNode.right = this.removeNode(rootNode.right, value);
@@ -139,14 +141,19 @@ class BinaryTree{
     heigthNode(node){
         if(node == null)
             return -1;
+            //se node igual a null retorna -1
         let leftHeigth = this.heigthNode(node.left),
             rightHeigth = this.heigthNode(node.right);
+            //altura da esquerda recebe nó da esquerda(node.left)
+            //altura da direita recebe nó da direita(node.rigth)
         if(leftHeigth > rightHeigth){
             return 1 + leftHeigth;
+            //se altura da esquerda maior que altura da direita 
+            //retorna 1 + altura da esquerda
         }else{
             return 1 + rightHeigth;
-        } 
-        //se node igual a null retorna -1 
+            //se não retorna 1 + altura da direita
+        }  
     }
 
     // informa quantos nós existem na arvore
@@ -158,6 +165,7 @@ class BinaryTree{
             return 0;
         return 1 + this.sumNodes(node.left)+this.sumNodes(node.right);
         //se nó igual a null retorna 0
+        //retorna 1 + Nó da esquerda + nó da direita 
     }
 
     //exibe o menor valor da arvore
@@ -170,7 +178,10 @@ class BinaryTree{
         //retorna o conteudo do nó
         while (node.left != null)
             node = node.left;
+            //enquanto nó da esquerda for diferente de null
+            //o nó recebe node.left(nó da esquerda)
         return node.content;
+        //retorna o conteudo do nó
     }
 
     //exibe o maior valor da arvore
@@ -178,6 +189,7 @@ class BinaryTree{
         let node = this.root;
         //variavel local node recebe root
         if (node == null) return null;
+        //se node for igual a null retorna null
         while (node.right != null)
             node = node.right;
         return node.content;
