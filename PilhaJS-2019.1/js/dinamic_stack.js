@@ -8,10 +8,15 @@ class DinamicStack {
     push(element) { // adiciona um elemento no topo da pilha
         let node  = new Node(element);
         if (!this.isEmpty()) {
-            node.next = this.top; 
+            //!verdadeiro = falso !false = true
+            //caso seja igual a true o objeto não esta vazio(isEmpty) o codigo é executado
+            node.next = this.top;
+            //Proximo elemento da raiz recebe topo
         }
         this.top = node;
+        //topo recebe nó
         this.length++;
+        //comprimento++
     }
 
     pop() {// remove um elemento no topo da pilha
