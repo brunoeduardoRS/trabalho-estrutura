@@ -51,13 +51,13 @@ class BinaryTree{
     }
     inOrder(rootNode, callback) {
         if (rootNode == null) return;
-        //rootNode igual a null returna nada
+        //rootNode igual a null retorna nada
         this.inOrder(rootNode.left, callback);
-        //mostrar o lemento da raiz para a direita
+        //mostrar o lemento da raiz para a esquerda
         callback(rootNode.content);
         //mostra o elemento do nó da raiz
         this.inOrder(rootNode.right, callback);
-        //mostra o elemento da esquerda
+        //mostra o elemento da direita
     }
 
     //executa a função callback para cada nó, em pré-ordem
@@ -66,13 +66,13 @@ class BinaryTree{
     }
     preOrder(rootNode, callback) {
         if (rootNode == null) return;
-        //rootNode igual a null returna nada
+        //rootNode igual a null retorna nada
         callback(rootNode.content);
         //mostra o elemento do nó da raiz
         this.preOrder(rootNode.left, callback);
-        //mostrar o lemento da raiz para a direita
+        //mostrar o lemento da raiz para a esquerda
         this.preOrder(rootNode.right, callback);
-        //mostra o elemento da esquerda
+        //mostra o elemento da direita
     }
     
     //executa a função callback para cada nó, em pós-ordem
@@ -81,11 +81,11 @@ class BinaryTree{
     }
     posOrder(rootNode, callback) {
         if (rootNode == null) return;
-        //rootNode igual a null returna nada
+        //rootNode igual a null retorna nada
         this.posOrder(rootNode.left, callback);
-        //mostrar o lemento da raiz para a direita
+        //mostrar o lemento da raiz para a esquerda
         this.posOrder(rootNode.right, callback);
-        //mostra o elemento da esquerda
+        //mostra o elemento da direita
         callback(rootNode.content);
         //mostra o elemento do nó da raiz
     }
